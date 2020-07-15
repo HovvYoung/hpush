@@ -1,0 +1,46 @@
+package com.hovvyoung.hpushClient.clientCommand;
+
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.Scanner;
+
+@Slf4j
+@Data
+@Service("LoginConsoleCommand")
+public class LoginConsoleCommand implements BaseCommand {
+    // LoginConsole的序号在map里是 '1'
+    public static final String KEY = "1";
+
+    private String userName;
+    private String password;
+
+    @Override
+    public void exec(Scanner scanner) {
+
+        System.out.println("请输入登录信息，格式为：用户名@密码 ");
+        String s = scanner.next();
+        String[] array = s.split("@");
+
+        while(array.length != 2) {
+            System.out.println("登录信息输入格式异常，请重新输入，格式为：内容@用户名");
+            s = scanner.next();
+            array = s.split("@");
+        }
+        userName = array[0];
+        password = array[1];
+        log.info("输入正确, 您输入的用户id是: {},密码是{}", userName, password);
+    }
+
+    @Override
+    public String getKey() {
+        return KEY;
+    }
+
+    @Override
+    public String getTip() {
+        return "登录";
+    }
+
+}

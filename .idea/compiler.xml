@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hpush-zookeeper" />
+        <module name="service-common" />
+        <module name="hpush-chat-server" />
+        <module name="hpush-chat-client" />
+        <module name="service-user" />
+        <module name="hpush-webgate" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="service-usesr" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
